@@ -10,13 +10,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      
       - name: Build Docker image
         run: docker build -t logger .
+        
       - name: Run Docker container
         run: docker run -it -v "$(pwd)/logs/:/home/logs/" logger
+        
       - name: Upload logs
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: logs
           path: logs/
