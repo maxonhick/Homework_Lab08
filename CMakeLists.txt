@@ -13,6 +13,8 @@ set(PRINT_VERSION_STRING "v\${PRINT_VERSION}")
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
+include_directories(include)
+
 add_library(print STATIC src/print.cpp)
 
 add_executable(demo demo/main.cpp)
