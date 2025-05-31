@@ -17,10 +17,12 @@ jobs:
         
       - name: Run Docker container
         run: docker run -v "$(pwd)/logs/:/home/logs/" logger
-        
+
+      - name: Check logs directory
+        run: ls -R logs/
+
       - name: Upload logs
         uses: actions/upload-artifact@v4
         with:
           name: logs
           path: logs/
-
