@@ -19,4 +19,4 @@ add_executable(demo demo/main.cpp)
 target_link_libraries(demo print)
 
 install(TARGETS print DESTINATION lib)
-install(TARGETS demo RESTINATION bin)
+install(TARGETS demo DESTINATION bin)
